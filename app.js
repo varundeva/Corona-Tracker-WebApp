@@ -4,6 +4,7 @@ var app = express()
 
 app.use("/static", express.static(__dirname + "/static"))
 app.set('view engine', 'ejs')
+const PORT = process.env.PORT || 3000;
 
 
 app.get('/', (req, res) => {
@@ -16,4 +17,4 @@ app.get('/', (req, res) => {
     });
 })
 
-app.listen(process.env.PORT || 3000, console.log("Listening on 3000"))
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`))
