@@ -36,4 +36,11 @@ $(function () {
       $(this).text(msgs[count % msgs.length]).fadeIn(500);
     });
   }, 5000);
+
+});
+$(document).ready(function(){
+  $('.fixed-action-btn').floatingActionButton();
+  $('.tooltipped').tooltip();
+  $('.collapsible').collapsible();
+
 });

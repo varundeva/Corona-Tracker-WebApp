@@ -1,20 +1,26 @@
 <%- include('header'); -%>
 
-<div class="container" id ="global">
+<div class="container" id="global">
   <div class="row">
     <div class="col s12">
       <div class="card white">
         <div class="row">
-            <div class="row">
-              <div class="col s12 m6 l8 center-align"><h4>Corona Tracker India 🇮🇳</h4></div>
-              <div class="col s12 m6 l4 center-align"><p>Last Updated ⌛ : <%= data.global.lastupdatedtime %></p></div>
+          <div class="row">
+            <div class="col s12 m6 l8 center-align">
+              <h4>Corona Tracker India 🇮🇳</h4>
             </div>
+            <div class="col s12 m6 l4 center-align">
+              <p>Last Updated ⌛ : <%= data.global.lastupdatedtime %></p>
+            </div>
+          </div>
           <div class="col s12 m6 l3">
             <div class="row">
               <div class="col s12">
-                <div class="card-panel red accent-1 hoverable">
+                <div class="card-panel pulse red accent-1 hoverable">
                   <span class="white-text center-align">
-                    <p><h6>Active Cases 🔴</h6></p>
+                    <p>
+                      <h6>Active Cases 🔴</h6>
+                    </p>
                     <p class="flow-text"><%= data.global.active %></p>
                   </span>
                 </div>
@@ -24,9 +30,11 @@
           <div class="col s12 m6 l3">
             <div class="row">
               <div class="col s12">
-                <div class="card-panel deep-orange hoverable">
+                <div class="card-panel pulse deep-orange hoverable">
                   <span class="white-text center-align">
-                    <p><h6>Confirmed Cases 🔴</h6></p>
+                    <p>
+                      <h6>Confirmed Cases 🔴</h6>
+                    </p>
                     <p class="flow-text"><%= data.global.confirmed %></p>
                   </span>
                 </div>
@@ -36,9 +44,11 @@
           <div class="col s12 m6 l3">
             <div class="row">
               <div class="col s12">
-                <div class="card-panel green hoverable">
+                <div class="card-panel pulse green hoverable">
                   <span class="white-text center-align">
-                    <p><h6>Recoverd Cases 💚</h6></p>
+                    <p>
+                      <h6>Recoverd Cases 💚</h6>
+                    </p>
                     <p class="flow-text"><%= data.global.recovered %></p>
                   </span>
                 </div>
@@ -48,9 +58,11 @@
           <div class="col s12 m6 l3">
             <div class="row">
               <div class="col s12">
-                <div class="card-panel black hoverable">
+                <div class="card-panel pulse black hoverable">
                   <span class="white-text center-align">
-                    <p><h6>Death Cases ⚰️</h6></p>
+                    <p>
+                      <h6>Death Cases ⚰️</h6>
+                    </p>
                     <p class="flow-text"><%= data.global.deaths %></p>
                   </span>
                 </div>
@@ -62,40 +74,52 @@
     </div>
   </div>
 </div>
-
+<div class="col s12 m6 l8 center-align">
 <div class="container" id="state">
-<div class="row">
-  <table class="highlight">
-    <thead>
-      <tr>
+  <div class="row">
+    <table id="table-custom-elements" class="highlight">
+      <thead>
+        <tr>
           <th><u>State</u></th>
           <th><u>Confirmed</u></th>
           <th><u>Active</u></th>
           <th><u>Recoverd</u></th>
           <th><u>Death</u></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% for(var i=1; i < data.state.length; i++) { %>
-        <tr>
-          <td><b><%= data.state[i].state %></b></td>
-          <td><%= data.state[i].confirmed %></td>
-          <td><%= data.state[i].active %></td>
-          <td><%= data.state[i].recovered %></td>
-          <td><%= data.state[i].deaths %></td>
         </tr>
-     <% } %>
-     <tr>
-      <td><b><%= data.state[0].state %></b></td>
-      <td><b><%= data.state[0].confirmed %></b></td>
-      <td><b><%= data.state[0].active %></b></td>
-      <td><b><%= data.state[0].recovered %></b></td>
-      <td><b><%= data.state[0].deaths %></b></td>
-    </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% for(var i=1; i < data.state.length; i++) { %>
+        <tr>
+          <td>📍<b><%= data.state[i].state %></b></td>
+          <td>😢 <%= data.state[i].confirmed %></td>
+          <td>😟 <%= data.state[i].active %></td>
+          <td>😃 <%= data.state[i].recovered %></td>
+          <td>😔 <%= data.state[i].deaths %></td>
+        </tr>
+        <% } %>
+        <tr>
+          <td><b><%= data.state[0].state %></b></td>
+          <td><b><%= data.state[0].confirmed %></b></td>
+          <td><b><%= data.state[0].active %></b></td>
+          <td><b><%= data.state[0].recovered %></b></td>
+          <td><b><%= data.state[0].deaths %></b></td>
+        </tr>
+      </tbody>
+    </table>
 
+  </div>
 </div>
+</div>
+
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">bug_report</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red" href="mailto:world4us.in@gmail.com"><i class="material-icons tooltipped" data-position="left" data-tooltip="E-Mail">contact_mail</i></a></li>
+    <li><a class="btn-floating red" href="https://github.com/varundeva"><i class="material-icons tooltipped" data-position="left" data-tooltip="GitHub">group</i></a></li>
+  </ul>
 </div>
 
 
